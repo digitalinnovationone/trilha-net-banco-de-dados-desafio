@@ -1,0 +1,1 @@
+SELECT * From Atores WHERE Genero ='M'

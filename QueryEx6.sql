@@ -1,0 +1,1 @@
+SELECT *  FROM Filmes Where Duracao > 100 AND Duracao < 150

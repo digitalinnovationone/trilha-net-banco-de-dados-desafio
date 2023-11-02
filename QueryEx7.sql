@@ -1,0 +1,3 @@
+SELECT Ano, COUNT(Ano) AS Quantidade  FROM Filmes 
+GROUP BY Ano
+ORDER BY COUNT(Ano) DESC
