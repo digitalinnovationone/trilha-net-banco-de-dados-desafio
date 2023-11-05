@@ -1,0 +1,149 @@
+-- 1 Buscando nome e ano dos filmes
+
+SELECT NOME, ANO FROM Filmes
+
+-----------------------------------
+
+
+-- 2 Buscando Nome e ano dos filmes ordenados pelo ano
+
+SELECT NOME, ANO FROM Filmes
+ORDER BY Ano
+
+-----------------------------------
+
+-- 3 Buscando o filme: De volta para o Futuro, trazendo nome ano e duração do mesmo.
+
+SELECT NOME, ANO, Duracao FROM FILMES
+WHERE NOME = 'DE VOLTA PARA O FUTURO'
+
+-----------------------------------
+
+
+
+-- 4 Filmes lançados em 1997
+
+SELECT * FROM Filmes
+WHERE ANO = 1997
+
+-----------------------------------
+
+
+-- 5 buscando filmes lançados após ano 2000
+
+SELECT * FROM Filmes
+WHERE ANO > 2000
+
+
+-----------------------------------
+
+-- 6 Buscando filmes com duração maior que 100 e menor que 150.. ordenando pela duração
+
+SELECT * FROM FILMES
+WHERE Duracao > 100 
+AND Duracao < 150
+ORDER BY Duracao
+
+
+-----------------------------------
+
+
+
+-- 7 buscando quantidade de filmes lançados no ano. Obs: deixando igual a imagem modelo
+
+SELECT Ano,
+    COUNT(*) AS Quantiadade
+FROM
+    Filmes
+GROUP BY
+    Ano
+ORDER BY
+    Quantiadade desc
+
+-- 7 buscando quantidade de filmes lançados no ano. Obs: buscando conforme solicitado pelo enunciado.
+
+SELECT
+    Ano,
+    COUNT(*) AS Quantidade,
+    SUM(duracao) as Duracao
+FROM
+    Filmes
+GROUP BY
+    Ano
+ORDER BY
+    Duracao
+
+
+
+-----------------------------------
+
+-- 8 buscar atores do genero masc, retornando 1º e ultimo nome.
+
+SELECT
+    A.Id,
+    A.PrimeiroNome,
+    A.UltimoNome,
+    A.Genero
+FROM
+    Atores A
+WHERE
+    A.Genero = 'M'
+
+
+
+-----------------------------------
+
+-- 9
+
+SELECT
+    A.Id,
+    A.PrimeiroNome,
+    A.UltimoNome,
+    A.Genero
+FROM
+    Atores A
+WHERE
+    A.Genero = 'F'
+ORDER BY 
+A.PrimeiroNome
+
+
+-- 10
+
+SELECT F.NOME,
+	   G.Genero
+
+FROM Filmes F
+JOIN Generos G ON F.Id = G.Id
+
+
+-----------------------------------
+
+-- 11
+
+SELECT F.NOME,
+	   G.Genero
+
+FROM Filmes F
+JOIN Generos G ON F.Id = G.Id
+WHERE G.Genero = 'Mistério'
+
+
+-----------------------------------
+
+
+
+-- 12
+
+SELECT
+    F.Nome,
+    A.PrimeiroNome AS PrimeiroNome,
+    A.UltimoNome AS UltimoNome,
+    EF.Papel
+FROM
+    Filmes F
+JOIN
+    ElencoFilme EF ON F.Id = EF.Id
+JOIN
+    Atores A ON EF.Id = A.Id;
+
