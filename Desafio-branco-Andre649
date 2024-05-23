@@ -1,0 +1,72 @@
+-- 1
+SELECT
+Nome, Ano,
+* FROM Filmes;
+
+-- 2
+SELECT Nome, * FROM Filmes
+ORDER BY Ano ASC
+
+-- 3
+SELECT Nome, Ano, Duracao
+FROM Filmes
+WHERE Nome = N'De Volta para o Futuro';
+
+-- 4
+SELECT Nome, Ano
+FROM Filmes
+WHERE Ano = 1997;
+
+-- 5
+SELECT Nome, Ano
+FROM Filmes
+WHERE Ano > 2000;
+
+-- 6
+SELECT Nome, Duracao
+FROM Filmes
+WHERE Duracao BETWEEN 100 AND 150
+ORDER BY Duracao ASC;
+
+-- 7
+SELECT  Ano, Duracao 
+FROM Filmes
+ORDER BY Duracao DESC
+
+-- 8
+SELECT 
+ a.Id,
+ a.PrimeiroNome,
+ a.UltimoNome,
+ a.Genero
+FROM Atores AS a 
+WHERE Genero = 'M'
+
+-- 9
+SELECT 
+ a.Id,
+ a.PrimeiroNome,
+ a.UltimoNome,
+ a.Genero
+FROM Atores AS a 
+WHERE Genero = 'F'
+
+-- 10
+SELECT f.Nome, g.Genero
+FROM Filmes AS f 
+JOIN FilmesGenero AS fg ON fg.IdFilme = f.Id
+JOIN Generos AS g ON g.Id = fg.Id;
+
+-- 11
+SELECT f.Nome, g.Genero 
+FROM Filmes AS f
+JOIN FilmesGenero AS fg ON fg.IdFilme = f.Id
+JOIN Generos AS g ON g.Id = fg.idGenero
+WHERE g.Genero = 'Mistério';
+
+-- 12
+
+SELECT f.Nome, a.PrimeiroNome, a.UltimoNome, ef.Papel 
+FROM Atores AS a 
+JOIN ElencoFilme AS ef ON ef.IdAtor = a.id
+JOIN Filmes as f ON f.id = ef.IdFilme
