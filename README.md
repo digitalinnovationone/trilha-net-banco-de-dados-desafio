@@ -1,3 +1,13 @@
+## Description
+🎯 Development was **strictly focused** on addressing the challenge.
+
+## Summary
+Primary objectives of the challenge:
+- ✅ Implemented the 12 `SQL` challenges
+
+
+---
+
 # DIO - Trilha .NET - Banco de Dados
 www.dio.me
 
