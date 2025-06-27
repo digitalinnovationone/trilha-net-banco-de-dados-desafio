@@ -66,7 +66,7 @@ Você deverá criar diversas consultas, com o objetivo de retornar os dados a se
 
 ![Exercicio 6](Imagens/6.png)
 
-## 7 - Buscar a quantidade de filmes lançadas no ano, agrupando por ano, ordenando pela duracao em ordem decrescente
+## 7 - Buscar a quantidade de filmes lançadas no ano, agrupando por ano, ordenando pelo ano em ordem decrescente
 
 ![Exercicio 7](Imagens/7.png)
 
