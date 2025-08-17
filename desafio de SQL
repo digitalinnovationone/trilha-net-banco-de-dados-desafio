@@ -1,0 +1,91 @@
+1. Buscar nome e ano dos filmes
+
+SELECT Nome, Ano FROM dbo.Filmes;
+SELECT indica que queremos selecionar colunas. Estamos buscando Nome e Ano da tabela Filmes.
+
+
+
+2. Buscar nome e ano dos filmes, ordenados por ano crescente
+
+SELECT Nome, Ano FROM dbo.Filmes ORDER BY Ano ASC;
+ORDER BY para ordenar os resultados. O ASC (ascendente) organiza os anos do mais antigo para o mais novo.
+
+
+
+3. Buscar pelo filme "De Volta para o Futuro"
+
+SELECT * FROM dbo.Filmes WHERE Nome LIKE '%De Volta para o Futuro%';
+LIKE permite buscar por padrões. O % significa “qualquer coisa antes ou depois”, então a consulta pega qualquer filme com nome De Volta para o Futuro.
+
+
+
+4. Buscar os filmes lançados em 1997
+
+SELECT Nome FROM dbo.Filmes WHERE Ano = 1997;
+SELECT indicando o Nome dos filmes cujo campo Ano seja exatamente 1997.
+
+
+
+5. Buscar filmes lançados após o ano 2000
+
+SELECT Nome, Ano FROM dbo.Filmes WHERE Ano > 2000 ORDER BY Ano DESC;
+SELECT buscando filmes com Ano maior que 2000, e ordenamos do mais recente para o mais antigo com DESC (descendente).
+
+
+
+6. Buscar filmes com duração entre 101 e 149 minutos
+
+SELECT * FROM dbo.Filmes WHERE Duracao BETWEEN 101 AND 149 ORDER BY Duracao ASC;
+Usando o BETWEEN para buscar uma faixa de valores: aqui, duração maior que 100 e menor que 150. Depois ordenamos pelo tempo de duração crescente.
+
+
+
+7. Quantidade de filmes por ano
+
+SELECT Ano, COUNT(*) AS Quantidade FROM dbo.Filmes GROUP BY Ano ORDER BY Quantidade DESC;
+Agrupamento com GROUP BY. Para cada ano, conta quantos filmes foram lançados com COUNT(*), e ordenamos pela Quantidade do maior para o menor.
+
+
+
+8. Buscar atores do gênero masculino
+
+SELECT PrimeiroNome, UltimoNome FROM dbo.Atores WHERE Genero = 'M';
+Filtramos por Genero = 'M' (masculino) e retornamos os nomes. Simples e direto.
+
+
+
+9. Atores do gênero feminino ordenados pelo primeiro nome
+
+SELECT PrimeiroNome, UltimoNome FROM dbo.Atores WHERE Genero = 'F' ORDER BY PrimeiroNome;
+Busca por Genero = 'F' (feminino) e ordenamos os resultados alfabeticamente pelo PrimeiroNome.
+
+
+
+10. Nome do filme e gênero
+
+SELECT F.Nome, G.Genero 
+FROM dbo.FilmesGenero FG
+INNER JOIN dbo.Filmes F ON F.id = FG.IdFilme
+INNER JOIN dbo.Generos G ON G.id = FG.IdGenero;
+A tabela FilmesGenero serve como ponte entre Filmes e Generos. O INNER JOIN une os dados com base no id correspondente em cada tabela.
+
+
+
+11. Nome do filme com gênero "Mistério"
+
+SELECT F.Nome, G.Genero 
+FROM dbo.FilmesGenero FG
+INNER JOIN dbo.Filmes F ON F.id = FG.IdFilme
+INNER JOIN dbo.Generos G ON G.id = FG.IdGenero
+WHERE G.Genero = 'Mistério';
+Filtro extra para trazer apenas os filmes do gênero “Mistério”.
+
+
+
+12. Nome do filme e seus atores com papel
+
+SELECT F.Nome, A.PrimeiroNome, A.UltimoNome, EF.Papel 
+FROM dbo.ElencoFilme EF
+INNER JOIN dbo.Filmes F ON F.id = EF.IdFilme
+INNER JOIN dbo.Atores A ON A.id = EF.IdAtor;
+Entre três tabelas: ElencoFilme liga filmes a atores. Retornamos o nome do filme, o nome do ator e o papel que ele desempenha.
