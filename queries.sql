@@ -1,13 +1,3 @@
-
---- trilha-net-banco-de-dados-desafio (DIO) ---
-
-select * from Atores
-select * from ElencoFilme
-select * from Filmes
-select * from FilmesGenero
-select * from Generos
-
-
 -- 1 - Buscar o nome e ano dos filmes
 select Nome, Ano from Filmes
 
