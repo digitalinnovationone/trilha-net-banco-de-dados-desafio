@@ -89,3 +89,23 @@ Você deverá criar diversas consultas, com o objetivo de retornar os dados a se
 ## 12 - Buscar o nome do filme e os atores, trazendo o PrimeiroNome, UltimoNome e seu Papel
 
 ![Exercicio 12](Imagens/12.png)
+
+##  Como Executar e Validar as Consultas
+
+1. Certifique-se de ter o SQL Server instalado ou use uma ferramenta como Azure Data Studio.
+2. Execute o script `Script Filmes.sql` para criar e popular o banco de dados.
+3. Abra o arquivo `consultas.sql` incluído neste repositório.
+4. Execute cada uma das 12 consultas individualmente.
+5. Compare os resultados com as imagens na pasta `Imagens` para validar.
+
+##  Arquivo de Respostas
+
+O arquivo `consultas.sql` contém todas as 12 consultas resolvidas e comentadas. Ele está disponível na raiz do projeto e pode ser usado para validação ou estudo.
+
+##  Sugestão de Entrega
+
+Você pode entregar este desafio de duas formas:
+
+- **Via GitHub**: Faça um fork do repositório, adicione o arquivo `consultas.sql`, e abra um Pull Request.
+- **Via arquivo compactado**: Envie o projeto com o script original, as imagens e o arquivo `consultas.sql` por e-mail ou plataforma indicada.
+
