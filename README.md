@@ -1,3 +1,16 @@
+# Sistema de Gerenciamento de Dados Relacionais (SQL Server)
+
+## 📌 Sobre o Projeto
+Este projeto demonstra minha capacidade de modelar dados e realizar consultas complexas em bancos de dados relacionais. Desenvolvido durante a trilha .NET, ele simula um sistema de gestão onde a integridade das informações é primordial.
+
+## 🛠️ Habilidades Demonstradas
+*   **Modelagem E/R:** Estruturação de tabelas e relacionamentos.
+*   **Queries Avançadas:** Uso de `JOINs`, `GROUP BY` e filtros específicos.
+*   **DML & DDL:** Criação de tabelas, inserção e atualização de registros.
+
+## 🚀 Por que isso é relevante para a Riachuelo?
+Sistemas de carteira digital (Wallet) dependem de consultas performáticas e dados consistentes. Este projeto comprova que domino a base necessária para manipular informações de transações e usuários com segurança.
+
 # DIO - Trilha .NET - Banco de Dados
 www.dio.me
 
